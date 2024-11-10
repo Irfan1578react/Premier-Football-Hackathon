@@ -51,9 +51,13 @@ try {
 
 //Progression 3 - Filter players that debuted in ___ year
   const filterByDebut=(year) => {
-    const filteredPlayers=players.filter((player) => {
+    let filteredPlayers=[];
+    if(year){
+      year=parseInt(year);
+    filteredPlayers=players.filter((player) => {
           return player.debut===year;
     })
+  }
     return filteredPlayers;
 
   }
